@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CodAlea</title>
+    <script type="importmap"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/retro-console.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CodAlea.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark fixed-top modern-navbar">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center" asp-area="" asp-page="/Index">
+                    <svg width="35" height="25" viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2" style="display: block !important; visibility: visible !important;">
+                        <!-- Líneas horizontales con círculos -->
+                        <line x1="10" y1="12" x2="45" y2="12" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="48" cy="12" r="2" fill="#ffffff" />
+
+                        <line x1="10" y1="20" x2="40" y2="20" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="43" cy="20" r="2" fill="#ffffff" />
+
+                        <line x1="10" y1="28" x2="35" y2="28" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="38" cy="28" r="2" fill="#ffffff" />
+
+                        <!-- Línea inferior con degradado -->
+                        <line x1="10" y1="38" x2="55" y2="38" stroke="#06b6d4" stroke-width="3" stroke-linecap="round" />
+
+                        <!-- Pequeños cuadrados decorativos -->
+                        <rect x="58" y="36" width="2" height="2" fill="#06b6d4" />
+                        <rect x="62" y="37" width="1.5" height="1.5" fill="#06b6d4" />
+                    </svg>
+                    <span class="gradient-text" style="display: inline-block !important; visibility: visible !important; color: #06b6d4 !important;">CodAlea</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-light d-flex align-items-center" href="#inicio">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
+                                    <path d="M3 9L12 2L21 9V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light d-flex align-items-center" href="#features">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
+                                    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Por qué CodAlea
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light d-flex align-items-center" href="#about">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
+                                    <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Quiénes Somos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light d-flex align-items-center" href="#contact">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
+                                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Contáctanos
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="main-content">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="row align-items-center py-3">
+                <div class="col-md-6">
+                    <div class="footer-brand d-flex align-items-center">
+                        <svg width="25" height="18" viewBox="0 0 70 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
+                            <line x1="10" y1="12" x2="45" y2="12" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" />
+                            <circle cx="48" cy="12" r="2" fill="#06b6d4" />
+                            <line x1="10" y1="20" x2="40" y2="20" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" />
+                            <circle cx="43" cy="20" r="2" fill="#06b6d4" />
+                            <line x1="10" y1="28" x2="35" y2="28" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" />
+                            <circle cx="38" cy="28" r="2" fill="#06b6d4" />
+                            <line x1="10" y1="38" x2="55" y2="38" stroke="#06b6d4" stroke-width="3" stroke-linecap="round" />
+                        </svg>
+                        <span class="footer-text">
+                            &copy; 2025 <span class="gradient-text fw-bold">CodAlea</span> - Innovando el Futuro del Código
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-social d-flex justify-content-md-end justify-content-center mt-2 mt-md-0">
+                        <a href="#" class="social-link me-3" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 8C18.2091 8 20 9.79086 20 12V21H16V12C16 11.4477 15.5523 11 15 11H13C12.4477 11 12 11.4477 12 12V21H8V8H12V9.5C12.8284 8.56497 14.3431 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/codalea.it/" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2" />
+                                <path d="M16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5931 15.1514 13.8416 15.5297C13.0901 15.9079 12.2384 16.0396 11.4078 15.9059C10.5771 15.7723 9.80976 15.3801 9.21484 14.7852C8.61992 14.1902 8.22773 13.4229 8.09407 12.5922C7.9604 11.7615 8.09207 10.9099 8.47033 10.1584C8.84859 9.40685 9.45419 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87658 12.63 8C13.4789 8.12588 14.2649 8.52146 14.8717 9.1283C15.4785 9.73515 15.8741 10.5211 16 11.37Z" stroke="currentColor" stroke-width="2" />
+                                <path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/home.js" asp-append-version="true"></script>
+    <script src="~/js/code-animation.js" asp-append-version="true"></script>
+    <script src="~/js/retro-console.js" asp-append-version="true"></script>
+    <script src="~/js/section-animations.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

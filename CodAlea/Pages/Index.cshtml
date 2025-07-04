@@ -1,0 +1,1098 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<!-- Hero Section -->
+<section class="hero-section" id="inicio">
+    <div class="floating-icons">
+        <div class="floating-icon">
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+        <div class="floating-icon">
+            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 18L22 12L16 6M8 6L2 12L8 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+        <div class="floating-icon">
+            <svg width="55" height="55" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                <path d="M8 14S9.5 16 12 16S16 14 16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 9H9.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M15 9H15.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+        <div class="floating-icon">
+            <svg width="45" height="45" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2" />
+                <path d="M8 21L16 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 17L12 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <!-- CodAlea SVG Logo -->
+                    <svg class="codalea-logo" viewBox="0 0 500 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Líneas horizontales con círculos (parte superior) -->
+                        <line x1="60" y1="25" x2="180" y2="25" stroke="white" stroke-width="4" stroke-linecap="round" />
+                        <circle cx="190" cy="25" r="5" fill="white" />
+
+                        <line x1="60" y1="35" x2="160" y2="35" stroke="white" stroke-width="4" stroke-linecap="round" />
+                        <circle cx="170" cy="35" r="5" fill="white" />
+
+                        <line x1="60" y1="45" x2="140" y2="45" stroke="white" stroke-width="4" stroke-linecap="round" />
+                        <circle cx="150" cy="45" r="5" fill="white" />
+
+                        <!-- Texto CODALEA -->
+                        <text x="25" y="85" font-family="Inter, sans-serif" font-size="42" font-weight="700" fill="white" letter-spacing="2px">CODALEA</text>
+
+                        <!-- Línea inferior con degradado -->
+                        <line x1="25" y1="100" x2="450" y2="100" stroke="url(#logoGradient)" stroke-width="8" stroke-linecap="round" />
+
+                        <!-- Elementos decorativos finales -->
+                        <rect x="460" y="95" width="8" height="8" fill="url(#logoGradient)" transform="rotate(45 464 99)" />
+                        <rect x="475" y="98" width="5" height="5" fill="url(#logoGradient)" />
+
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <h1 class="hero-title">
+                        Transforma Tu<br><span class="gradient-text">Código</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Soluciones innovadoras para el desarrollo moderno
+                    </p>
+                    <div class="welcome-text">
+                        <!-- El texto se generará con JavaScript -->
+                    </div>
+                    <a href="#features" class="cta-button">
+                        Descubre Más
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="code-editor-container">
+                    <!-- VS Code Editor SVG Mejorado -->
+                    <svg width="500" height="650" viewBox="0 0 500 650" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- VS Code Window Frame -->
+                        <rect x="10" y="10" width="480" height="630" rx="8" fill="#1e1e1e" stroke="#323233" stroke-width="1" />
+
+                        <!-- VS Code Title Bar -->
+                        <rect x="10" y="10" width="480" height="35" rx="8" fill="#3c3c3c" />
+                        <rect x="10" y="37" width="480" height="1" fill="#323233" />
+
+                        <!-- VS Code Window Controls -->
+                        <circle cx="30" cy="27" r="6" fill="#ff5f57" />
+                        <circle cx="50" cy="27" r="6" fill="#ffbd2e" />
+                        <circle cx="70" cy="27" r="6" fill="#28ca42" />
+
+                        <!-- VS Code Icon y Título -->
+                        <rect x="90" y="20" width="14" height="14" rx="2" fill="#007acc" />
+                        <path d="M94 22 L100 26 L94 30 L96 28 L99 26 L96 24 Z" fill="#ffffff" />
+                        <text x="112" y="31" font-family="Segoe UI, sans-serif" font-size="13" fill="#cccccc" font-weight="400">CodAlea Studio - Program.cs</text>
+
+                        <!-- Menu Bar -->
+                        <rect x="10" y="38" width="480" height="22" fill="#2d2d30" />
+                        <text x="20" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#cccccc">File</text>
+                        <text x="50" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#cccccc">Edit</text>
+                        <text x="80" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#cccccc">View</text>
+                        <text x="110" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#cccccc">Go</text>
+                        <text x="135" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#cccccc">Run</text>
+                        <text x="160" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#cccccc">Terminal</text>
+                        <text x="210" y="52" font-family="Segoe UI, sans-serif" font-size="11" fill="#cccccc">Help</text>
+
+                        <!-- Activity Bar -->
+                        <rect x="10" y="60" width="48" height="580" fill="#333333" />
+                        <rect x="58" y="60" width="1" height="580" fill="#323233" />
+
+                        <!-- Activity Bar Icons -->
+                        <rect x="19" y="75" width="30" height="30" rx="4" fill="#007acc" opacity="0.2" />
+                        <path d="M26 85 L26 95 L30 90 L38 90 L38 85 Z M30 85 L30 88 L35 88 L35 85 Z" fill="#007acc" />
+
+                        <rect x="22" y="115" width="24" height="24" rx="2" fill="#616161" />
+                        <path d="M28 121 L28 133 L32 129 L36 129 L36 121 Z" fill="#cccccc" />
+
+                        <rect x="22" y="145" width="24" height="24" rx="2" fill="#616161" />
+                        <circle cx="34" cy="157" r="6" stroke="#cccccc" stroke-width="1.5" fill="none" />
+                        <path d="M30 153 L38 161 M38 153 L30 161" stroke="#cccccc" stroke-width="1.5" />
+
+                        <rect x="22" y="175" width="24" height="24" rx="2" fill="#616161" />
+                        <path d="M28 181 L40 181 L40 193 L28 193 Z M30 183 L38 183 M30 185 L38 185 M30 187 L38 187" stroke="#cccccc" stroke-width="1" fill="none" />
+
+                        <rect x="22" y="205" width="24" height="24" rx="2" fill="#616161" />
+                        <circle cx="34" cy="217" r="3" fill="#cccccc" />
+                        <path d="M30 213 L38 213 M30 221 L38 221" stroke="#cccccc" stroke-width="1" />
+
+                        <!-- Sidebar -->
+                        <rect x="59" y="60" width="150" height="580" fill="#252526" />
+                        <rect x="209" y="60" width="1" height="580" fill="#323233" />
+
+                        <!-- Sidebar Header -->
+                        <rect x="59" y="60" width="150" height="30" fill="#2d2d30" />
+                        <text x="70" y="78" font-family="Segoe UI, sans-serif" font-size="11" fill="#cccccc" font-weight="600">EXPLORER</text>
+                        <path d="M180 70 L185 75 L180 80" stroke="#cccccc" stroke-width="1" fill="none" />
+                        <path d="M190 70 L195 75 L190 80" stroke="#cccccc" stroke-width="1" fill="none" />
+
+                        <!-- File Tree -->
+                        <text x="70" y="105" font-family="Segoe UI, sans-serif" font-size="11" fill="#cccccc" font-weight="600">� CODALEA</text>
+                        <text x="85" y="125" font-family="Segoe UI, sans-serif" font-size="10" fill="#cccccc">🔽 Controllers</text>
+                        <text x="100" y="140" font-family="Segoe UI, sans-serif" font-size="10" fill="#cccccc">� CodAleaController.cs</text>
+                        <text x="85" y="155" font-family="Segoe UI, sans-serif" font-size="10" fill="#cccccc">� Models</text>
+                        <text x="100" y="170" font-family="Segoe UI, sans-serif" font-size="10" fill="#cccccc">📄 CodAleaUser.cs</text>
+                        <text x="85" y="185" font-family="Segoe UI, sans-serif" font-size="10" fill="#cccccc">� Services</text>
+                        <text x="100" y="200" font-family="Segoe UI, sans-serif" font-size="10" fill="#cccccc">📄 ICodAleaService.cs</text>
+                        <text x="85" y="215" font-family="Segoe UI, sans-serif" font-size="10" fill="#cccccc">� Views</text>
+                        <text x="85" y="230" font-family="Segoe UI, sans-serif" font-size="10" fill="#cccccc">📄 Program.cs</text>
+                        <text x="85" y="245" font-family="Segoe UI, sans-serif" font-size="10" fill="#cccccc">📄 appsettings.json</text>
+
+                        <!-- Editor Area (más ancho) -->
+                        <rect x="210" y="60" width="280" height="580" fill="#1e1e1e" />
+
+                        <!-- Tab Bar -->
+                        <rect x="210" y="60" width="280" height="30" fill="#2d2d30" />
+                        <rect x="210" y="90" width="280" height="1" fill="#323233" />
+
+                        <!-- Active Tab -->
+                        <rect x="215" y="65" width="120" height="20" rx="2" fill="#1e1e1e" stroke="#007acc" stroke-width="1" />
+                        <text x="225" y="77" font-family="Segoe UI, sans-serif" font-size="11" fill="#cccccc">Program.cs</text>
+                        <circle cx="325" cy="75" r="3" fill="#cccccc" opacity="0.7" />
+
+                        <!-- Breadcrumb -->
+                        <rect x="215" y="95" width="270" height="15" fill="#2d2d30" />
+                        <text x="220" y="105" font-family="Segoe UI, sans-serif" font-size="9" fill="#858585">CodAlea › Program.cs</text>
+
+                        <!-- Line Numbers -->
+                        <rect x="215" y="115" width="35" height="520" fill="#1e1e1e" />
+                        <rect x="250" y="115" width="1" height="520" fill="#323233" />
+
+                        <!-- Line Numbers Text -->
+                        <text font-family="Consolas, monospace" font-size="11" fill="#858585">
+                            <tspan x="225" y="135">1</tspan>
+                            <tspan x="225" y="150">2</tspan>
+                            <tspan x="225" y="165">3</tspan>
+                            <tspan x="225" y="180">4</tspan>
+                            <tspan x="225" y="195">5</tspan>
+                            <tspan x="225" y="210">6</tspan>
+                            <tspan x="225" y="225">7</tspan>
+                            <tspan x="225" y="240">8</tspan>
+                            <tspan x="225" y="255">9</tspan>
+                            <tspan x="225" y="270">10</tspan>
+                            <tspan x="225" y="285">11</tspan>
+                            <tspan x="225" y="300">12</tspan>
+                            <tspan x="225" y="315">13</tspan>
+                            <tspan x="225" y="330">14</tspan>
+                            <tspan x="225" y="345">15</tspan>
+                            <tspan x="225" y="360">16</tspan>
+                            <tspan x="225" y="375">17</tspan>
+                            <tspan x="225" y="390">18</tspan>
+                            <tspan x="225" y="405">19</tspan>
+                            <tspan x="225" y="420">20</tspan>
+                            <tspan x="225" y="435">21</tspan>
+                            <tspan x="225" y="450">22</tspan>
+                            <tspan x="225" y="465">23</tspan>
+                            <tspan x="225" y="480">24</tspan>
+                            <tspan x="225" y="495">25</tspan>
+                            <tspan x="225" y="510">26</tspan>
+                            <tspan x="225" y="525">27</tspan>
+                            <tspan x="225" y="540">28</tspan>
+                            <tspan x="225" y="555">29</tspan>
+                            <tspan x="225" y="570">30</tspan>
+                            <tspan x="225" y="585">31</tspan>
+                            <tspan x="225" y="600">32</tspan>
+                            <tspan x="225" y="615">33</tspan>
+                            <tspan x="225" y="630">34</tspan>
+                        </text>
+
+                        <!-- Code Content Area (populated by JavaScript) -->
+                        <g id="code-content">
+                            <!-- El contenido del código se añadirá dinámicamente -->
+                        </g>
+
+                        <!-- Status Bar -->
+                        <rect x="10" y="620" width="480" height="20" fill="#007acc" />
+                        <text x="20" y="632" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff">🔧 CodAlea Development Server</text>
+                        <text x="200" y="632" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff">Ln 1, Col 1</text>
+                        <text x="280" y="632" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff">UTF-8</text>
+                        <text x="320" y="632" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff">CRLF</text>
+                        <text x="360" y="632" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff">C#</text>
+                        <text x="470" y="632" font-family="Segoe UI, sans-serif" font-size="10" fill="#ffffff" text-anchor="end">✓</text>
+
+                        <!-- Minimap -->
+                        <rect x="470" y="115" width="15" height="500" fill="#2d2d30" opacity="0.8" />
+                        <rect x="472" y="120" width="11" height="20" fill="#007acc" opacity="0.3" />
+                        <rect x="472" y="145" width="11" height="15" fill="#c586c0" opacity="0.3" />
+                        <rect x="472" y="165" width="11" height="25" fill="#d4d4d4" opacity="0.3" />
+                        <rect x="472" y="195" width="11" height="18" fill="#6a9955" opacity="0.3" />
+
+                        <!-- Scrollbars -->
+                        <rect x="485" y="115" width="5" height="500" fill="#3c3c3c" />
+                        <rect x="485" y="200" width="5" height="80" fill="#686868" rx="2" />
+
+                        <rect x="215" y="615" width="255" height="5" fill="#3c3c3c" />
+                        <rect x="250" y="615" width="100" height="5" fill="#686868" rx="2" />
+
+                        <!-- Particle effects container -->
+                        <g id="code-particles">
+                            <!-- Partículas de código se añadirán aquí -->
+                        </g>
+
+                        <defs>
+                            <linearGradient id="vsCodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#1e1e1e;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#252526;stop-opacity:1" />
+                            </linearGradient>
+
+                            <!-- Gradiente para efectos de brillo -->
+                            <linearGradient id="codeGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:transparent;stop-opacity:0" />
+                                <stop offset="50%" style="stop-color:#007acc;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:transparent;stop-opacity:0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section" id="features">
+    <!-- Features Floating Shapes Animation -->
+    <div class="features-floating-shapes">
+        <div class="floating-shape triangle" style="--delay: 0s; --duration: 15s; top: 10%; left: 10%;"></div>
+        <div class="floating-shape circle" style="--delay: 2s; --duration: 18s; top: 20%; right: 15%;"></div>
+        <div class="floating-shape square" style="--delay: 4s; --duration: 12s; top: 60%; left: 5%;"></div>
+        <div class="floating-shape triangle" style="--delay: 6s; --duration: 20s; bottom: 30%; right: 10%;"></div>
+        <div class="floating-shape circle" style="--delay: 3s; --duration: 16s; top: 70%; left: 80%;"></div>
+        <div class="floating-shape square" style="--delay: 1s; --duration: 14s; bottom: 10%; left: 60%;"></div>
+        <div class="floating-shape triangle" style="--delay: 5s; --duration: 17s; top: 40%; left: 30%;"></div>
+        <div class="floating-shape circle" style="--delay: 7s; --duration: 13s; bottom: 60%; right: 40%;"></div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center mb-5">
+                <h2 class="section-title">
+                    ¿Por qué Elegir <span class="gradient-text">CodAlea</span>?
+                </h2>
+                <p class="lead text-muted">
+                    Descubre las razones que nos convierten en la elección ideal para tus proyectos de desarrollo
+                </p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card h-100">
+                    <div class="feature-icon mb-4">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Ultra Rápido</h3>
+                    <p class="feature-description">
+                        Experimenta un rendimiento ultrarrápido con nuestras herramientas de desarrollo optimizadas e infraestructura de última generación.
+                    </p>
+                    <div class="feature-badge">
+                        <span class="badge bg-primary">Performance</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card h-100">
+                    <div class="feature-icon mb-4">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22S8 18 8 12V7L12 5L16 7V12C16 18 12 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Seguro y Confiable</h3>
+                    <p class="feature-description">
+                        Construido con la seguridad en mente. Tu código y datos están protegidos con seguridad de nivel empresarial y las mejores prácticas.
+                    </p>
+                    <div class="feature-badge">
+                        <span class="badge bg-success">Seguridad</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card h-100">
+                    <div class="feature-icon mb-4">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 21V19C17 17.9 16.1 17 15 17H9C7.9 17 7 17.9 7 19V21M12 11C14.21 11 16 9.21 16 7S14.21 3 12 3 8 4.79 8 7 9.79 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Primero el Desarrollador</h3>
+                    <p class="feature-description">
+                        Diseñado por desarrolladores, para desarrolladores. Herramientas intuitivas que mejoran tu experiencia de codificación diaria.
+                    </p>
+                    <div class="feature-badge">
+                        <span class="badge bg-info">UX/DX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Features Row -->
+        <div class="row g-4 mt-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card h-100">
+                    <div class="feature-icon mb-4">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 16V8C20.9996 7.64927 20.9071 7.30481 20.7315 7.00116C20.556 6.69751 20.3037 6.44536 20 6.27L13 2.27C12.696 2.09446 12.3511 2.00205 12 2.00205C11.6489 2.00205 11.304 2.09446 11 2.27L4 6.27C3.69626 6.44536 3.44398 6.69751 3.26846 7.00116C3.09294 7.30481 3.00036 7.64927 3 8V16C3.00036 16.3507 3.09294 16.6952 3.26846 16.9988C3.44398 17.3025 3.69626 17.5546 4 17.73L11 21.73C11.304 21.9055 11.6489 21.9979 12 21.9979C12.3511 21.9979 12.696 21.9055 13 21.73L20 17.73C20.3037 17.5546 20.556 17.3025 20.7315 16.9988C20.9071 16.6952 20.9996 16.3507 21 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <polyline points="7.5,4.21 12,6.81 16.5,4.21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <polyline points="7.5,19.79 7.5,14.6 3,12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <polyline points="21,12 16.5,14.6 16.5,19.79" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <polyline points="12,22.08 12,17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Arquitectura Modular</h3>
+                    <p class="feature-description">
+                        Soluciones escalables y modulares que crecen con tu negocio. Arquitectura pensada para el futuro.
+                    </p>
+                    <div class="feature-badge">
+                        <span class="badge bg-warning">Escalable</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card h-100">
+                    <div class="feature-icon mb-4">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Soporte 24/7</h3>
+                    <p class="feature-description">
+                        Nuestro equipo está disponible cuando lo necesites. Soporte técnico completo y documentación detallada.
+                    </p>
+                    <div class="feature-badge">
+                        <span class="badge bg-danger">24/7</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card h-100">
+                    <div class="feature-icon mb-4">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L22 8.5V15.5L12 22L2 15.5V8.5L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 22V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M22 8.5L12 15L2 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Tecnología Cutting-Edge</h3>
+                    <p class="feature-description">
+                        Utilizamos las últimas tecnologías y frameworks para mantenerte a la vanguardia del desarrollo.
+                    </p>
+                    <div class="feature-badge">
+                        <span class="badge bg-secondary">Innovación</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section-enhanced">
+    <!-- Code Matrix Background Animation -->
+    <div class="about-code-matrix">
+        <div class="matrix-line" style="--delay: 0s; --duration: 25s; top: 5%;">
+            class CodAlea { public async Task&lt;Solution&gt; CreateAsync() =&gt; await innovation.Build();
+        </div>
+        <div class="matrix-line" style="--delay: 3s; --duration: 30s; top: 15%;">
+            const expertise = new TechnicalSkills({ years: 15, projects: 500, satisfaction: '99.9%' });
+        </div>
+        <div class="matrix-line" style="--delay: 6s; --duration: 22s; top: 25%;">
+            SELECT * FROM success WHERE client_satisfaction = 'Excellent' AND project_status = 'Delivered';
+        </div>
+        <div class="matrix-line" style="--delay: 9s; --duration: 27s; top: 35%;">
+            def transform_idea_to_reality(concept): return scalable_architecture + modern_tech + passion
+        </div>
+        <div class="matrix-line" style="--delay: 12s; --duration: 24s; top: 45%;">
+            &lt;innovation&gt;Microsoft Stack + Angular + Azure + DevOps&lt;/innovation&gt;
+        </div>
+        <div class="matrix-line" style="--delay: 2s; --duration: 28s; top: 55%;">
+            interface Enterprise { microservices: boolean; cloudNative: true; highAvailability: '99.9%'; }
+        </div>
+        <div class="matrix-line" style="--delay: 15s; --duration: 20s; top: 65%;">
+            git commit -m "Another successful project delivered 🚀" && git push origin production
+        </div>
+        <div class="matrix-line" style="--delay: 8s; --duration: 26s; top: 75%;">
+            await codalea.scaleYourBusiness({ from: 'MVP', to: 'Enterprise', timeframe: 'optimized' });
+        </div>
+        <div class="matrix-line" style="--delay: 18s; --duration: 23s; top: 85%;">
+            # Docker + Kubernetes + CI/CD = Seamless Deployment Pipeline ⚡
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Hero About -->
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <h2 class="section-title text-start mb-4">
+                        <span class="gradient-text">Quiénes Somos</span>
+                    </h2>
+                    <p class="lead text-muted mb-4">
+                        Somos un equipo apasionado de desarrolladores y arquitectos de software, especialistas en crear soluciones
+                        digitales de <strong>clase enterprise</strong> que transforman ideas innovadoras en realidades tecnológicas robustas.
+                    </p>
+                    <p class="text-muted mb-4">
+                        Con más de <strong>10 años de experiencia</strong> en el ecosistema Microsoft y tecnologías modernas,
+                        diseñamos arquitecturas escalables, sistemas de alta disponibilidad y aplicaciones que soportan
+                        millones de transacciones diarias.
+                    </p>
+                    <div class="expertise-highlight">
+                        <div class="expertise-item">
+                            <span class="expertise-number">500+</span>
+                            <span class="expertise-label">Proyectos Entregados</span>
+                        </div>
+                        <div class="expertise-item">
+                            <span class="expertise-number">15+</span>
+                            <span class="expertise-label">Años de Experiencia</span>
+                        </div>
+                        <div class="expertise-item">
+                            <span class="expertise-number">99.9%</span>
+                            <span class="expertise-label">Uptime Garantizado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-visual">
+                    <div class="tech-orbit">
+                        <div class="central-logo">
+                            <svg width="80" height="80" viewBox="0 0 100 100" class="rotating-logo">
+                                <circle cx="50" cy="50" r="35" fill="url(#techGradient)" />
+                                <path d="M30 35 L50 25 L70 35 L70 55 L50 65 L30 55 Z" fill="white" />
+                                <text x="50" y="55" text-anchor="middle" fill="url(#techGradient)" font-size="12" font-weight="bold">Stacks</text>
+                            </svg>
+                        </div>
+
+                        <!-- Orbiting Tech Icons -->
+                        <div class="orbit-item" style="--delay: 0s; --angle: 0deg;">
+                            <svg width="40" height="40" viewBox="0 0 40 40" class="tech-icon">
+                                <rect x="5" y="5" width="30" height="30" rx="5" fill="#512BD4" />
+                                <text x="20" y="25" text-anchor="middle" fill="white" font-size="10" font-weight="bold">.NET</text>
+                            </svg>
+                        </div>
+
+                        <div class="orbit-item" style="--delay: 1s; --angle: 72deg;">
+                            <svg width="40" height="40" viewBox="0 0 40 40" class="tech-icon">
+                                <rect x="5" y="5" width="30" height="30" rx="5" fill="#0078D4" />
+                                <text x="20" y="25" text-anchor="middle" fill="white" font-size="8" font-weight="bold">Azure</text>
+                            </svg>
+                        </div>
+
+                        <div class="orbit-item" style="--delay: 2s; --angle: 144deg;">
+                            <svg width="40" height="40" viewBox="0 0 40 40" class="tech-icon">
+                                <rect x="5" y="5" width="30" height="30" rx="5" fill="#DD0031" />
+                                <text x="20" y="25" text-anchor="middle" fill="white" font-size="7" font-weight="bold">Angular</text>
+                            </svg>
+                        </div>
+
+                        <div class="orbit-item" style="--delay: 3s; --angle: 216deg;">
+                            <svg width="40" height="40" viewBox="0 0 40 40" class="tech-icon">
+                                <rect x="5" y="5" width="30" height="30" rx="5" fill="#CC2927" />
+                                <text x="20" y="25" text-anchor="middle" fill="white" font-size="9" font-weight="bold">SQL</text>
+                            </svg>
+                        </div>
+
+                        <div class="orbit-item" style="--delay: 4s; --angle: 288deg;">
+                            <svg width="40" height="40" viewBox="0 0 40 40" class="tech-icon">
+                                <rect x="5" y="5" width="30" height="30" rx="5" fill="#2496ED" />
+                                <text x="20" y="20" text-anchor="middle" fill="white" font-size="6" font-weight="bold">Docker</text>
+                                <text x="20" y="28" text-anchor="middle" fill="white" font-size="6" font-weight="bold">K8s</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Stack Grid -->
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-center mb-5">
+                    <span class="gradient-text">Nuestro Stack Tecnológico</span>
+                </h3>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Backend & APIs -->
+            <div class="col-lg-3 col-md-6">
+                <div class="tech-category-card">
+                    <div class="tech-category-header">
+                        <div class="tech-category-icon backend">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" />
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" />
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <h4>Backend & APIs</h4>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag primary">.NET 8</span>
+                        <span class="tech-tag primary">.NET 6/Core</span>
+                        <span class="tech-tag primary">ASP.NET</span>
+                        <span class="tech-tag primary">RESTful APIs</span>
+                        <span class="tech-tag primary">Microservices</span>
+                        <span class="tech-tag primary">ADO.NET</span>
+                        <span class="tech-tag primary">WCF</span>
+                        <span class="tech-tag primary">Entity Framework</span>
+                        <span class="tech-tag primary">Swagger</span>
+                        <span class="tech-tag primary">MQ Queues</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database & Storage -->
+            <div class="col-lg-3 col-md-6">
+                <div class="tech-category-card">
+                    <div class="tech-category-header">
+                        <div class="tech-category-icon database">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                                <ellipse cx="12" cy="5" rx="9" ry="3" stroke="currentColor" stroke-width="2" />
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" stroke="currentColor" stroke-width="2" />
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <h4>Database & Storage</h4>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag success">SQL Server</span>
+                        <span class="tech-tag success">Oracle</span>
+                        <span class="tech-tag success">MariaDB</span>
+                        <span class="tech-tag success">Entity Framework</span>
+                        <span class="tech-tag success">Large-scale data</span>
+                        <span class="tech-tag success">Performance Optimization</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frontend & UI -->
+            <div class="col-lg-3 col-md-6">
+                <div class="tech-category-card">
+                    <div class="tech-category-header">
+                        <div class="tech-category-icon frontend">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2" />
+                                <path d="M8 21l8 0" stroke="currentColor" stroke-width="2" />
+                                <path d="M12 17l0 4" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <h4>Frontend & UI</h4>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag warning">Angular (v8-v13)</span>
+                        <span class="tech-tag warning">Bootstrap</span>
+                        <span class="tech-tag warning">TELERIK</span>
+                        <span class="tech-tag warning">Kendo UI</span>
+                        <span class="tech-tag warning">HTML5</span>
+                        <span class="tech-tag warning">Micro frontends</span>
+                        <span class="tech-tag warning">Xamarin</span>
+                        <span class="tech-tag warning">Crystal Reports</span>
+                        <span class="tech-tag warning">Windows Forms</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DevOps & Cloud -->
+            <div class="col-lg-3 col-md-6">
+                <div class="tech-category-card">
+                    <div class="tech-category-header">
+                        <div class="tech-category-icon devops">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <h4>DevOps & Cloud</h4>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tech-tag info">Docker</span>
+                        <span class="tech-tag info">Azure DevOps</span>
+                        <span class="tech-tag info">Git/GitHub</span>
+                        <span class="tech-tag info">CI/CD pipelines</span>
+                        <span class="tech-tag info">SonarQube</span>
+                        <span class="tech-tag info">Visual Studio</span>
+                        <span class="tech-tag info">IIS</span>
+                        <span class="tech-tag info">UDeploy</span>
+                        <span class="tech-tag info">Jira</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Methodology Section -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="methodology-section">
+                    <h3 class="text-center mb-4">
+                        <span class="gradient-text">Metodologías & Mejores Prácticas</span>
+                    </h3>
+                    <div class="row g-4">
+                        <div class="col-lg-4">
+                            <div class="methodology-card">
+                                <div class="methodology-icon agile">
+                                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 2L22 8.5V15.5L12 22L2 15.5V8.5L12 2Z" stroke="currentColor" stroke-width="2" />
+                                        <path d="M12 22V12" stroke="currentColor" stroke-width="2" />
+                                        <path d="M22 8.5L12 15L2 8.5" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                </div>
+                                <h4>Metodologías Ágiles</h4>
+                                <div class="methodology-tags">
+                                    <span class="method-tag">Scrum</span>
+                                    <span class="method-tag">SAFe Agile</span>
+                                    <span class="method-tag">Two-week sprints</span>
+                                    <span class="method-tag">DevOps Practices</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="methodology-card">
+                                <div class="methodology-icon quality">
+                                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 22S8 18 8 12V7L12 5L16 7V12C16 18 12 22 12 22Z" stroke="currentColor" stroke-width="2" />
+                                        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                </div>
+                                <h4>Calidad & Testing</h4>
+                                <div class="methodology-tags">
+                                    <span class="method-tag">NUnit/XUnit</span>
+                                    <span class="method-tag">Code Reviews</span>
+                                    <span class="method-tag">QA Collaboration</span>
+                                    <span class="method-tag">Code Security</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="methodology-card">
+                                <div class="methodology-icon architecture">
+                                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                                        <path d="M21 16V8C20.9996 7.64927 20.9071 7.30481 20.7315 7.00116C20.556 6.69751 20.3037 6.44536 20 6.27L13 2.27C12.696 2.09446 12.3511 2.00205 12 2.00205C11.6489 2.00205 11.304 2.09446 11 2.27L4 6.27C3.69626 6.44536 3.44398 6.69751 3.26846 7.00116C3.09294 7.30481 3.00036 7.64927 3 8V16C3.00036 16.3507 3.09294 16.6952 3.26846 16.9988C3.44398 17.3025 3.69626 17.5546 4 17.73L11 21.73C11.304 21.9055 11.6489 21.9979 12 21.9979C12.3511 21.9979 12.696 21.9055 13 21.73L20 17.73C20.3037 17.5546 20.556 17.3025 20.7315 16.9988C20.9071 16.6952 20.9996 16.3507 21 16Z" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                </div>
+                                <h4>Arquitectura Enterprise</h4>
+                                <div class="methodology-tags">
+                                    <span class="method-tag">Scalable Architecture</span>
+                                    <span class="method-tag">Migration Systems</span>
+                                    <span class="method-tag">Architecture Decisions</span>
+                                    <span class="method-tag">Dynamics 365</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="skills-showcase">
+                    <h3 class="text-center mb-4">
+                        <span class="gradient-text">Soft Skills & Competencias</span>
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon problem-solving">
+                                <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <span>Problem-solving</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon analytical">
+                                <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 11H7a2 2 0 100 4h2m6-4h2a2 2 0 110 4h-2m-6-4v4m6-4v4" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <span>Analytical thinking</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon teamwork">
+                                <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <span>Teamwork</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon leadership">
+                                <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <span>Leadership</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon adaptability">
+                                <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                                    <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <span>Adaptability</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon remote">
+                                <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" />
+                                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <span>Remote collaboration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tech gradients for SVGs -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <!-- Network Connections Background Animation -->
+    <div class="contact-network-bg">
+        <div class="network-node" style="--delay: 3s; --duration: 6s; top: 60%; right: 15%;"></div>
+        <div class="network-node" style="--delay: 1.5s; --duration: 4.5s; bottom: 30%; left: 25%;"></div>
+        <div class="network-node" style="--delay: 2.5s; --duration: 5.5s; bottom: 20%; right: 30%;"></div>
+        <div class="network-node" style="--delay: 0.5s; --duration: 4.2s; top: 30%; left: 60%;"></div>
+        <div class="network-node" style="--delay: 3.5s; --duration: 3.8s; bottom: 40%; right: 50%;"></div>
+
+        <!-- Network Connection Lines -->
+        <div class="network-line" style="--delay: 1s; --duration: 7s; top: 15%; left: 18%; width: 200px; transform: rotate(25deg);"></div>
+        <div class="network-line" style="--delay: 3s; --duration: 8s; top: 35%; left: 15%; width: 150px; transform: rotate(-15deg);"></div>
+        <div class="network-line" style="--delay: 5s; --duration: 6s; top: 50%; right: 20%; width: 180px; transform: rotate(45deg);"></div>
+        <div class="network-line" style="--delay: 2s; --duration: 9s; bottom: 35%; left: 30%; width: 220px; transform: rotate(-30deg);"></div>
+        <div class="network-line" style="--delay: 4s; --duration: 7.5s; top: 25%; left: 50%; width: 160px; transform: rotate(60deg);"></div>
+        <div class="network-line" style="--delay: 6s; --duration: 5.5s; bottom: 25%; right: 35%; width: 140px; transform: rotate(-45deg);"></div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="section-title mb-4">
+                    <span class="gradient-text">Contáctanos</span>
+                </h2>
+                <p class="lead mb-5">
+                    ¿Tienes un proyecto en mente? Conectemos y transformemos tus ideas en <strong>código extraordinario</strong>.
+                </p>
+            </div>
+        </div>
+
+        <!-- Animated Contact Cards -->
+        <div class="row g-4 justify-content-center">
+            <!-- Email Card -->
+            <div class="col-lg-5 col-md-6">
+                <div class="contact-card email-card">
+                    <div class="contact-card-inner">
+                        <div class="contact-card-front">
+                            <div class="contact-icon-container">
+                                <div class="contact-icon email-icon">
+                                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                                        <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" />
+                                        <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                </div>
+                                <!-- Email Animation Particles -->
+                                <div class="email-particles">
+                                    <div class="email-particle" style="--delay: 0s;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" />
+                                            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="email-particle" style="--delay: 0.5s;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
+                                            <path d="M16 8V6A4 4 0 0 0 8 6V8" stroke="currentColor" stroke-width="2" />
+                                            <rect x="6" y="10" width="12" height="10" rx="2" stroke="currentColor" stroke-width="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="email-particle" style="--delay: 1s;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" />
+                                            <polygon points="22,2 15,22 11,13 2,9 22,2" stroke="currentColor" stroke-width="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="email-particle" style="--delay: 1.5s;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="contact-title">Email</h3>
+                            <p class="contact-description">Envíanos tu consulta</p>
+                            <div class="contact-action">
+                                <span class="contact-cta">Hover para detalles</span>
+                            </div>
+                        </div>
+                        <div class="contact-card-back">
+                            <div class="contact-details">
+                                <h4>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="vertical-align: middle; margin-right: 8px;">
+                                        <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" />
+                                        <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                    Correo Electrónico
+                                </h4>
+                                <p class="contact-email">contactanos@codalea.com</p>
+                                <div class="contact-features">
+                                    <div class="feature-item">
+                                        <span class="feature-emoji">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </span>
+                                        <span>Respuesta en 24h</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-emoji">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
+                                                <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </span>
+                                        <span>Consultoría gratuita</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-emoji">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                                <circle cx="9" cy="21" r="1" stroke="currentColor" stroke-width="2" />
+                                                <circle cx="20" cy="21" r="1" stroke="currentColor" stroke-width="2" />
+                                                <path d="M1 1H5L7.68 14.39A2 2 0 0 0 9.65 16H19.4A2 2 0 0 0 21.36 14.39L23 6H6" stroke="currentColor" stroke-width="2" />
+                                                <circle cx="12" cy="8" r="1" fill="currentColor" />
+                                                <path d="M12 3V8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                            </svg>
+                                        </span>
+                                        <span>Ideas innovadoras</span>
+                                    </div>
+                                </div>
+                                <a href="mailto:contactanos@codalea.com" class="btn btn-contact-action">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                        <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" />
+                                        <polygon points="22,2 15,22 11,13 2,9 22,2" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                    Enviar Email
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WhatsApp Card -->
+            <div class="col-lg-5 col-md-6">
+                <div class="contact-card whatsapp-card">
+                    <div class="contact-card-inner">
+                        <div class="contact-card-front">
+                            <div class="contact-icon-container">
+                                <div class="contact-icon whatsapp-icon">
+                                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                                        <path d="M21 11.5C21.0034 12.8199 20.6951 14.1219 20.1 15.3C19.3944 16.7117 18.3098 17.8992 16.9674 18.7293C15.6251 19.5594 14.0782 19.9994 12.5 20C11.1801 20.0035 9.87812 19.6951 8.7 19.1L3 21L4.9 15.3C4.30493 14.1219 3.99656 12.8199 4 11.5C4.00061 9.92179 4.44061 8.37488 5.27072 7.03258C6.10083 5.69028 7.28825 4.60568 8.7 3.90003C9.87812 3.30496 11.1801 2.99659 12.5 3.00003H13C15.0843 3.11502 17.053 3.99479 18.5291 5.47089C20.0052 6.94699 20.885 8.91568 21 11V11.5Z" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                </div>
+                                <!-- WhatsApp Animation -->
+                                <div class="whatsapp-bubbles">
+                                    <div class="chat-bubble" style="--delay: 0s;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <path d="M21 11.5C21.0034 12.8199 20.6951 14.1219 20.1 15.3C19.3944 16.7117 18.3098 17.8992 16.9674 18.7293C15.6251 19.5594 14.0782 19.9994 12.5 20C11.1801 20.0035 9.87812 19.6951 8.7 19.1L3 21L4.9 15.3C4.30493 14.1219 3.99656 12.8199 4 11.5C4.00061 9.92179 4.44061 8.37488 5.27072 7.03258C6.10083 5.69028 7.28825 4.60568 8.7 3.90003C9.87812 3.30496 11.1801 2.99659 12.5 3.00003H13C15.0843 3.11502 17.053 3.99479 18.5291 5.47089C20.0052 6.94699 20.885 8.91568 21 11V11.5Z" stroke="currentColor" stroke-width="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="chat-bubble" style="--delay: 0.7s;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="chat-bubble" style="--delay: 1.4s;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2" />
+                                            <path d="M8 21l8 0" stroke="currentColor" stroke-width="2" />
+                                            <path d="M12 17l0 4" stroke="currentColor" stroke-width="2" />
+                                        </svg>
+                                    </div>
+                                    <div class="chat-bubble" style="--delay: 2.1s;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <polygon points="12,2 15.09,8.26 22,9 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9 8.91,8.26 12,2" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="contact-title">WhatsApp</h3>
+                            <p class="contact-description">Chat directo con nosotros</p>
+                            <div class="contact-action">
+                                <span class="contact-cta">Hover para detalles</span>
+                            </div>
+                        </div>
+                        <div class="contact-card-back">
+                            <div class="contact-details">
+                                <h4>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="vertical-align: middle; margin-right: 8px;">
+                                        <path d="M21 11.5C21.0034 12.8199 20.6951 14.1219 20.1 15.3C19.3944 16.7117 18.3098 17.8992 16.9674 18.7293C15.6251 19.5594 14.0782 19.9994 12.5 20C11.1801 20.0035 9.87812 19.6951 8.7 19.1L3 21L4.9 15.3C4.30493 14.1219 3.99656 12.8199 4 11.5C4.00061 9.92179 4.44061 8.37488 5.27072 7.03258C6.10083 5.69028 7.28825 4.60568 8.7 3.90003C9.87812 3.30496 11.1801 2.99659 12.5 3.00003H13C15.0843 3.11502 17.053 3.99479 18.5291 5.47089C20.0052 6.94699 20.885 8.91568 21 11V11.5Z" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                    WhatsApp Business
+                                </h4>
+                                <p class="contact-phone">+57 322 913 68 25</p>
+                                <div class="contact-features">
+                                    <div class="feature-item">
+                                        <span class="feature-emoji">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                                <path d="M21 11.5C21.0034 12.8199 20.6951 14.1219 20.1 15.3C19.3944 16.7117 18.3098 17.8992 16.9674 18.7293C15.6251 19.5594 14.0782 19.9994 12.5 20C11.1801 20.0035 9.87812 19.6951 8.7 19.1L3 21L4.9 15.3C4.30493 14.1219 3.99656 12.8199 4 11.5C4.00061 9.92179 4.44061 8.37488 5.27072 7.03258C6.10083 5.69028 7.28825 4.60568 8.7 3.90003C9.87812 3.30496 11.1801 2.99659 12.5 3.00003H13C15.0843 3.11502 17.053 3.99479 18.5291 5.47089C20.0052 6.94699 20.885 8.91568 21 11V11.5Z" stroke="currentColor" stroke-width="2" />
+                                            </svg>
+                                        </span>
+                                        <span>Chat en tiempo real</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-emoji">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2" />
+                                                <path d="M8 21l8 0" stroke="currentColor" stroke-width="2" />
+                                                <path d="M12 17l0 4" stroke="currentColor" stroke-width="2" />
+                                            </svg>
+                                        </span>
+                                        <span>Disponible 24/7</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-emoji">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                                <path d="M16 21V19A2 2 0 0 0 14 17H10A2 2 0 0 0 8 19V21" stroke="currentColor" stroke-width="2" />
+                                                <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" />
+                                            </svg>
+                                        </span>
+                                        <span>Soporte personalizado</span>
+                                    </div>
+                                </div>
+                                <a href="https://wa.me/573229136825?text=¡Hola%20CodAlea!%20Me%20interesa%20conocer%20más%20sobre%20sus%20servicios." class="btn btn-contact-action whatsapp-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                        <path d="M21 11.5C21.0034 12.8199 20.6951 14.1219 20.1 15.3C19.3944 16.7117 18.3098 17.8992 16.9674 18.7293C15.6251 19.5594 14.0782 19.9994 12.5 20C11.1801 20.0035 9.87812 19.6951 8.7 19.1L3 21L4.9 15.3C4.30493 14.1219 3.99656 12.8199 4 11.5C4.00061 9.92179 4.44061 8.37488 5.27072 7.03258C6.10083 5.69028 7.28825 4.60568 8.7 3.90003C9.87812 3.30496 11.1801 2.99659 12.5 3.00003H13C15.0843 3.11502 17.053 3.99479 18.5291 5.47089C20.0052 6.94699 20.885 8.91568 21 11V11.5Z" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                    Iniciar Chat
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Contact Info -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="additional-contact-info">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-3 col-md-6 text-center">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                                        <path d="M2 12H6M18 12H22M12 2V6M12 18V22" stroke="currentColor" stroke-width="2" />
+                                        <path d="M12 8C13.1046 8 14 8.89543 14 10C14 11.1046 13.1046 12 12 12C10.8954 12 10 11.1046 10 10C10 8.89543 10.8954 8 12 8Z" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                </div>
+                                <h5>Ubicación</h5>
+                                <p>Colombia, Bogotá.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 text-center">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                                        <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                </div>
+                                <h5>Horario</h5>
+                                <p>Lun - Vie: 8:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 text-center">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                        <rect x="2" y="5" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2" />
+                                        <path d="M16 3V7M8 3V7M3 11H21" stroke="currentColor" stroke-width="2" />
+                                        <path d="M8 15H12M8 19H10" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </div>
+                                <h5>Consultoría</h5>
+                                <p>Primera sesión gratuita</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 text-center">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                        <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <h5>Proyectos</h5>
+                                <p>Desde MVPs hasta Enterprise</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Code Animation Background -->
+        <div class="contact-code-bg">
+            <div class="code-line" style="--delay: 0s; --duration: 8s;">
+                <span class="code-comment">// Conectando con CodAlea...</span>
+            </div>
+            <div class="code-line" style="--delay: 1s; --duration: 9s;">
+                <span class="code-keyword">const</span> <span class="code-variable">proyecto</span> = <span class="code-string">"increíble"</span>;
+            </div>
+            <div class="code-line" style="--delay: 2s; --duration: 10s;">
+                <span class="code-function">await</span> <span class="code-variable">codalea</span>.<span class="code-method">crearSolucion</span>();
+            </div>
+            <div class="code-line" style="--delay: 3s; --duration: 7s;">
+                <span class="code-comment">// Tu idea + Nuestro código = Éxito</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SVG Gradients -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="contactGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="whatsappGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#25D366;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#128C7E;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+</section>
