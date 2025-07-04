@@ -29,9 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Typing effect for welcome text
+    // Typing effect for welcome text - now handled by language switcher
     const welcomeText = document.querySelector('.welcome-text');
-    if (welcomeText) {
+    if (welcomeText && !window.languageSwitcher) {
+        // Fallback if language switcher is not loaded yet
         const text = "Bienvenido a CodAlea - Donde el Código se Encuentra con la Innovación";
         welcomeText.textContent = '';
         welcomeText.style.opacity = '1';

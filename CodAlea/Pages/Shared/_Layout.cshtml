@@ -4,6 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - CodAlea</title>
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/svg+xml" href="~/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/favicon-192.svg" />
+    <link rel="manifest" href="~/site.webmanifest" />
+    <meta name="theme-color" content="#2563eb" />
     <script type="importmap"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +57,7 @@
                                     <path d="M3 9L12 2L21 9V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                Inicio
+                                <span data-translate="nav-home">Inicio</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -59,7 +65,7 @@
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
                                     <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                Por qué CodAlea
+                                <span data-translate="nav-features">Por qué CodAlea</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -68,7 +74,7 @@
                                     <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                Quiénes Somos
+                                <span data-translate="nav-about">Quiénes Somos</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -77,7 +83,7 @@
                                     <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                Contáctanos
+                                <span data-translate="nav-contact">Contáctanos</span>
                             </a>
                         </li>
                     </ul>
@@ -106,7 +112,7 @@
                             <line x1="10" y1="38" x2="55" y2="38" stroke="#06b6d4" stroke-width="3" stroke-linecap="round" />
                         </svg>
                         <span class="footer-text">
-                            &copy; 2025 <span class="gradient-text fw-bold">CodAlea</span> - Innovando el Futuro del Código
+                            &copy; 2025 <span class="gradient-text fw-bold">CodAlea</span> - <span data-translate="footer-text">Innovando el Futuro del Código</span>
                         </span>
                     </div>
                 </div>
@@ -134,6 +140,7 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/language-switcher.js" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/home.js" asp-append-version="true"></script>
     <script src="~/js/code-animation.js" asp-append-version="true"></script>

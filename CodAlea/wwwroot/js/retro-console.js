@@ -7,6 +7,10 @@ class CodAleaRetroConsole {
         this.currentCommand = '';
         this.isProcessing = false;
         
+        // Language support
+        this.languageSwitcher = null;
+        this.waitForLanguageSwitcher();
+        
         // Sistema de audio
         this.currentAudio = null;
         this.audioVolume = 0.8; // 80% de volumen
@@ -14,23 +18,23 @@ class CodAleaRetroConsole {
         // Easter eggs y comandos especiales
         this.secretCommands = {
             'playthrone': {
-                description: '🎮 Iniciar simulación TRON: Legacy - Derezzed',
+                description: () => this.t('secret-tron'),
                 action: () => this.launchTronGame()
             },
             'playthriller': {
-                description: '🕺 Iniciar simulación Michael Jackson - Thriller',
+                description: () => this.t('secret-thriller'),
                 action: () => this.launchThrillerGame()
             },
             'codalea': {
-                description: '🚀 Mostrar información de CodAlea',
+                description: () => this.t('secret-codalea'),
                 action: () => this.showCodAleaInfo()
             },
             'matrix': {
-                description: '💊 Entrar en la Matrix',
+                description: () => this.t('secret-matrix'),
                 action: () => this.activateMatrixMode()
             },
             'konami': {
-                description: '🎯 Código Konami detectado',
+                description: () => this.t('secret-konami'),
                 action: () => this.konamiCode()
             }
         };
@@ -59,41 +63,77 @@ class CodAleaRetroConsole {
             'unmute': () => this.adjustVolume(0.8)
         };
         
-        this.bootMessages = [
+        // Boot messages are now generated dynamically
+        this.initializeConsole();
+    }
+    
+    // Generate boot messages dynamically based on current language
+    getBootMessages() {
+        return [
             "╔══════════════════════════════════════╗",
-            "║        CodAlea RetroOS v2.0          ║",
-            "║      Sistema de Comandos 8-bits      ║",
+            this.t('boot-header'),
             "╚══════════════════════════════════════╝",
             "",
-            "🔥 Inicializando sistema...",
-            "⚡ Cargando drivers de innovación...",
-            "🚀 Conectando con la Matrix del código...",
-            "✨ Sistema listo para comandos!",
+            this.t('boot-initializing'),
+            this.t('boot-loading'),
+            this.t('boot-connecting'),
+            this.t('boot-ready'),
             "",
-            "💡 Pst, en CodAlea nos encantan los acertijos...",
-            "🎮 Tienes una pequeña pista: puedes digitar",
-            "   'playthrone' o 'playthriller' 😉",
+            this.t('boot-hint'),
+            this.t('boot-hint2'),
             "",
-            "Escribe 'help' para ver comandos disponibles."
+            this.t('boot-help')
         ];
+    }
+    
+    // Language support methods
+    waitForLanguageSwitcher() {
+        const checkForLanguageSwitcher = () => {
+            if (window.languageSwitcher) {
+                this.languageSwitcher = window.languageSwitcher;
+                this.languageSwitcher.addLanguageChangeListener(() => {
+                    this.updateConsoleLanguage();
+                });
+            } else {
+                setTimeout(checkForLanguageSwitcher, 100);
+            }
+        };
+        checkForLanguageSwitcher();
+    }
+    
+    // Translation helper method
+    t(key, replacements = {}) {
+        if (this.languageSwitcher) {
+            return this.languageSwitcher.getTranslation(key, replacements);
+        }
+        return key; // Fallback to key if no language switcher
+    }
+    
+    // Update console language
+    updateConsoleLanguage() {
+        // Update console title if visible
+        const consoleTitle = document.querySelector('.console-title span');
+        if (consoleTitle) {
+            consoleTitle.textContent = `🖥️ ${this.t('console-title')}`;
+        }
         
-        this.jokes = [
-            "¿Por qué los programadores prefieren el café? Porque el té es para testing! ☕",
-            "¿Cuántos programadores se necesitan para cambiar una bombilla? Ninguno, es un problema de hardware 💡",
-            "99 bugs in the code, 99 bugs... take one down, patch it around, 127 bugs in the code 🐛",
-            "Error 404: Chiste no encontrado, pero aquí tienes uno gratis! 😄",
-            "¿Por qué los programadores odian la naturaleza? Porque tiene demasiados bugs! 🌿🐛"
-        ];
+        // Update input placeholder
+        const consoleInput = document.getElementById('console-input');
+        if (consoleInput) {
+            consoleInput.placeholder = this.t('console-placeholder');
+        }
         
-        this.quotes = [
-            "\"El código es poesía.\" - CodAlea Team 📝",
-            "\"La innovación distingue entre un líder y un seguidor.\" - Steve Jobs 🍎",
-            "\"El software es como el sexo: es mejor cuando es gratis.\" - Linus Torvalds 🐧",
-            "\"Medir el progreso del software por líneas de código es como medir el progreso de la construcción de aviones por peso.\" - Bill Gates ✈️",
-            "\"En CodAlea, convertimos café en código y sueños en realidad.\" - CodAlea Philosophy ☕"
-        ];
+        // Update prompt if needed
+        const consolePrompt = document.querySelector('.console-prompt');
+        if (consolePrompt) {
+            consolePrompt.textContent = this.t('console-prompt');
+        }
         
-        this.initializeConsole();
+        // Update toggle button title
+        const toggleButton = document.getElementById('console-toggle');
+        if (toggleButton) {
+            toggleButton.title = this.t('console-toggle-title');
+        }
     }
     
     initializeConsole() {
@@ -111,7 +151,7 @@ class CodAleaRetroConsole {
         container.innerHTML = `
             <div class="console-header">
                 <div class="console-title">
-                    <span>🖥️ CodAlea Terminal</span>
+                    <span>🖥️ ${this.t('console-title')}</span>
                 </div>
                 <div class="console-controls">
                     <button class="console-btn minimize" title="Minimizar"></button>
@@ -121,9 +161,9 @@ class CodAleaRetroConsole {
             </div>
             <div class="console-output" id="console-output"></div>
             <div class="console-input-area">
-                <span class="console-prompt">CodAlea@retro:~$</span>
+                <span class="console-prompt">${this.t('console-prompt')}</span>
                 <input type="text" class="console-input" id="console-input" 
-                       placeholder="Escribe un comando..." autocomplete="off">
+                       placeholder="${this.t('console-placeholder')}" autocomplete="off">
             </div>
         `;
         
@@ -157,7 +197,7 @@ class CodAleaRetroConsole {
         const button = document.createElement('button');
         button.className = 'console-toggle';
         button.id = 'console-toggle';
-        button.title = 'Abrir/Cerrar CodAlea Console - ¡Mira la persecución épica!';
+        button.title = this.t('console-toggle-title');
         
         // Crear el contenido del botón con la animación
         button.innerHTML = `
@@ -318,7 +358,7 @@ class CodAleaRetroConsole {
         if (matches.length === 1) {
             document.getElementById('console-input').value = matches[0];
         } else if (matches.length > 1) {
-            this.addOutput(`Coincidencias: ${matches.join(', ')}`, 'system');
+            this.addOutput(this.t('command-matches', { matches: matches.join(', ') }), 'system');
         }
     }
     
@@ -332,7 +372,7 @@ class CodAleaRetroConsole {
         
         // Verificar comandos secretos primero
         if (this.secretCommands[cmd]) {
-            this.addOutput(this.secretCommands[cmd].description, 'success');
+            this.addOutput(this.secretCommands[cmd].description(), 'success');
             setTimeout(() => {
                 this.secretCommands[cmd].action();
             }, 500);
@@ -346,7 +386,7 @@ class CodAleaRetroConsole {
         }
         
         // Comando no reconocido
-        this.addOutput(`❌ Comando '${cmd}' no reconocido. Escribe 'help' para ver comandos disponibles.`, 'error');
+        this.addOutput(this.t('command-not-recognized', { cmd: cmd }), 'error');
         
         // Sugerencias basadas en similitud
         this.suggestCommand(cmd);
@@ -359,7 +399,7 @@ class CodAleaRetroConsole {
         );
         
         if (suggestions.length > 0) {
-            this.addOutput(`💡 ¿Quisiste decir: ${suggestions.slice(0, 3).join(', ')}?`, 'warning');
+            this.addOutput(this.t('command-suggest', { suggestions: suggestions.slice(0, 3).join(', ') }), 'warning');
         }
     }
     
@@ -399,35 +439,14 @@ class CodAleaRetroConsole {
     // Comandos básicos
     showHelp() {
         const commands = [
-            "🔧 Comandos disponibles:",
-            "  help     - Mostrar esta ayuda",
-            "  clear    - Limpiar consola",
-            "  about    - Acerca de CodAlea",
-            "  version  - Versión del sistema",
-            "  credits  - Créditos del equipo",
-            "  time     - Hora actual",
-            "  joke     - Chiste random",
-            "  quote    - Cita inspiradora",
-            "  stats    - Estadísticas del sistema",
-            "  easter   - Mostrar easter eggs",
-            "  whoami   - ¿Quién eres?",
-            "  echo     - Repetir texto",
-            "  cowsay   - ASCII art con mensaje",
+            this.t('help-title'),
+            this.t('help-basic'),
             "",
-            "� Comandos de audio:",
-            "  stop     - Detener música actual",
-            "  volume   - Ver/cambiar volumen (0-100)",
-            "  mute     - Silenciar audio",
-            "  unmute   - Restaurar volumen",
+            this.t('help-audio'),
             "",
-            "�🎮 Comandos especiales:",
-            "  Hay comandos secretos... ¿puedes encontrarlos? 😉",
+            this.t('help-special'),
             "",
-            "⌨️  Atajos:",
-            "  ↑/↓      - Historial de comandos",
-            "  Tab      - Autocompletar",
-            "  Ctrl+`   - Abrir/cerrar consola",
-            "  Esc      - Cerrar consola y detener audio"
+            this.t('help-shortcuts')
         ];
         
         commands.forEach(cmd => this.addOutput(cmd, 'system'));
@@ -435,52 +454,52 @@ class CodAleaRetroConsole {
     
     clearConsole() {
         document.getElementById('console-output').innerHTML = '';
-        this.addOutput("Consola limpiada. ✨", 'success');
+        this.addOutput(this.t('console-cleared'), 'success');
     }
     
     showAbout() {
         const aboutText = [
-            "🚀 CodAlea - Innovando el futuro del código",
+            this.t('about-company'),
             "",
-            "Somos una empresa dedicada a crear soluciones",
-            "tecnológicas innovadoras y experiencias digitales",
-            "excepcionales. Combinamos la pasión por el código",
-            "con creatividad y un toque retro.",
+            this.t('about-desc1'),
+            this.t('about-desc2'),
+            this.t('about-desc3'),
+            this.t('about-desc4'),
             "",
-            "🌟 Nuestra misión: Transformar ideas en realidad",
-            "💡 Nuestra visión: Un mundo más conectado",
-            "⚡ Nuestros valores: Innovación, calidad, diversión",
+            this.t('about-mission'),
+            this.t('about-vision'),
+            this.t('about-values'),
             "",
-            "Visita: www.codalea.com 🌐"
+            this.t('about-website')
         ];
         
         aboutText.forEach(text => this.addOutput(text, 'system'));
     }
     
     showVersion() {
-        this.addOutput("CodAlea RetroOS v2.0.2025", 'system');
-        this.addOutput("Build: 20250703-retro-edition", 'system');
-        this.addOutput("Kernel: CodAlea-Core 8.0", 'system');
-        this.addOutput("💚 Powered by love and coffee", 'success');
+        this.addOutput(this.t('version-os'), 'system');
+        this.addOutput(this.t('version-build'), 'system');
+        this.addOutput(this.t('version-kernel'), 'system');
+        this.addOutput(this.t('version-powered'), 'success');
     }
     
     showCredits() {
         const credits = [
-            "🎨 CodAlea Development Team",
+            this.t('credits-title'),
             "",
-            "👨‍💻 Lead Developer: Jonatham",
-            "🎵 Sound Design: Retro Synth AI",
-            "🎮 Game Logic: 8-bit Masters",
-            "🎨 UI/UX: Pixel Art Collective",
-            "☕ Coffee Provider: Local Café",
+            this.t('credits-lead'),
+            this.t('credits-sound'),
+            this.t('credits-game'),
+            this.t('credits-ui'),
+            this.t('credits-coffee'),
             "",
-            "🙏 Agradecimientos especiales a:",
-            "- Michael Jackson (inspiración Thriller)",
-            "- Daft Punk (inspiración TRON)",
-            "- La comunidad .NET",
-            "- Todos los beta testers",
+            this.t('credits-thanks'),
+            this.t('credits-mj'),
+            this.t('credits-dp'),
+            this.t('credits-net'),
+            this.t('credits-beta'),
             "",
-            "💙 Hecho con amor en CodAlea"
+            this.t('credits-made')
         ];
         
         credits.forEach(credit => this.addOutput(credit, 'system'));
@@ -488,43 +507,41 @@ class CodAleaRetroConsole {
     
     showTime() {
         const now = new Date();
-        const timeString = now.toLocaleString('es-ES', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit'
-        });
+        const timeString = this.languageSwitcher ? 
+            this.languageSwitcher.formatTime(now) : 
+            now.toLocaleString();
         
         this.addOutput(`🕒 ${timeString}`, 'system');
         this.addOutput(`⏰ Timestamp: ${now.getTime()}`, 'system');
     }
     
     showRandomJoke() {
-        const joke = this.jokes[Math.floor(Math.random() * this.jokes.length)];
+        const joke = this.languageSwitcher ? 
+            this.languageSwitcher.getRandomJoke() : 
+            'Error loading joke 😅';
         this.addOutput(`😄 ${joke}`, 'success');
     }
     
     showRandomQuote() {
-        const quote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
+        const quote = this.languageSwitcher ? 
+            this.languageSwitcher.getRandomQuote() : 
+            'Error loading quote 💭';
         this.addOutput(`💭 ${quote}`, 'success');
     }
     
     showStats() {
         const stats = [
-            "📊 Estadísticas del Sistema CodAlea:",
+            this.t('stats-title'),
             "",
-            `⚡ Comandos ejecutados: ${this.commandHistory.length}`,
-            `🕒 Tiempo activo: ${this.getUptime()}`,
-            `💾 Memoria usada: ${Math.floor(Math.random() * 50 + 30)}%`,
-            `🔥 CPU: ${Math.floor(Math.random() * 20 + 5)}%`,
-            `🌐 Conectividad: ONLINE`,
-            `🚀 Estado: OPTIMAL`,
+            this.t('stats-commands', { count: this.commandHistory.length }),
+            this.t('stats-uptime', { uptime: this.getUptime() }),
+            this.t('stats-memory', { memory: Math.floor(Math.random() * 50 + 30) }),
+            this.t('stats-cpu', { cpu: Math.floor(Math.random() * 20 + 5) }),
+            this.t('stats-connectivity'),
+            this.t('stats-status'),
             "",
-            "🎮 Easter eggs encontrados: ¿?",
-            "💡 Nivel de diversión: 9000+"
+            this.t('stats-easter'),
+            this.t('stats-fun')
         ];
         
         stats.forEach(stat => this.addOutput(stat, 'system'));
@@ -638,13 +655,13 @@ class CodAleaRetroConsole {
             
             // Reproducir el audio
             this.currentAudio.play().then(() => {
-                this.addOutput(`🎵 Reproduciendo: ${description}`, 'success');
-                this.addOutput(`🔊 Volumen: ${Math.round(this.audioVolume * 100)}%`, 'system');
-                this.addOutput(`🔄 Modo: Bucle infinito`, 'system');
-                this.addOutput(`💡 Tip: Presiona Esc o cierra la consola para detener`, 'hint');
+                this.addOutput(this.t('audio-playing', { description: description }), 'success');
+                this.addOutput(this.t('audio-volume', { volume: Math.round(this.audioVolume * 100) }), 'system');
+                this.addOutput(this.t('audio-loop'), 'system');
+                this.addOutput(this.t('audio-tip'), 'hint');
             }).catch((error) => {
-                this.addOutput(`❌ Error reproduciendo audio: ${error.message}`, 'error');
-                this.addOutput(`🔍 Verifica que el archivo existe en /mp3songs/`, 'warning');
+                this.addOutput(this.t('audio-error', { error: error.message }), 'error');
+                this.addOutput(this.t('audio-file-error'), 'warning');
             });
             
         } catch (error) {
@@ -657,7 +674,7 @@ class CodAleaRetroConsole {
             this.currentAudio.pause();
             this.currentAudio.currentTime = 0;
             this.currentAudio = null;
-            this.addOutput(`🔇 Audio detenido`, 'system');
+            this.addOutput(this.t('audio-stopped'), 'system');
         }
     }
     
@@ -669,19 +686,19 @@ class CodAleaRetroConsole {
             this.currentAudio.volume = this.audioVolume;
         }
         
-        this.addOutput(`🔊 Volumen ajustado a: ${Math.round(this.audioVolume * 100)}%`, 'system');
+        this.addOutput(this.t('volume-adjusted', { volume: Math.round(this.audioVolume * 100) }), 'system');
     }
     
     volumeControl(args) {
         if (!args.length) {
-            this.addOutput(`🔊 Volumen actual: ${Math.round(this.audioVolume * 100)}%`, 'system');
-            this.addOutput(`💡 Uso: volume <0-100>`, 'hint');
+            this.addOutput(this.t('volume-current', { volume: Math.round(this.audioVolume * 100) }), 'system');
+            this.addOutput(this.t('volume-usage'), 'hint');
             return;
         }
         
         const volume = parseInt(args[0]);
         if (isNaN(volume) || volume < 0 || volume > 100) {
-            this.addOutput(`❌ Volumen inválido. Usa un número entre 0-100`, 'error');
+            this.addOutput(this.t('volume-invalid'), 'error');
             return;
         }
         
@@ -936,17 +953,19 @@ class CodAleaRetroConsole {
         
         // Mostrar mensajes de boot
         setTimeout(() => {
-            this.bootMessages.forEach((msg, index) => {
+            const bootMessages = this.getBootMessages();
+            bootMessages.forEach((msg, index) => {
                 setTimeout(() => {
                     this.addOutput(msg, index < 4 ? 'system' : 
-                                     msg.includes('Pst') || msg.includes('pista') ? 'hint' : 'system');
+                                     msg.includes(this.t('boot-hint').split(' ')[0]) || 
+                                     msg.includes('pista') || msg.includes('Psst') ? 'hint' : 'system');
                 }, index * 200);
             });
             
             // Focus en el input después del boot
             setTimeout(() => {
                 document.getElementById('console-input').focus();
-            }, this.bootMessages.length * 200 + 500);
+            }, bootMessages.length * 200 + 500);
         }, 500);
     }
     

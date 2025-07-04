@@ -1,4 +1,98 @@
 ﻿/* CodAlea Home Page Styles */
+
+/* Geek Cursor and Scrollbar Styles */
+* {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><defs><filter id="glow"><feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M2 2l6 14 2-5 5-2L2 2z" fill="%23ffffff" stroke="%2306b6d4" stroke-width="1" filter="url(%23glow)"/><circle cx="3" cy="3" r="1" fill="%2300ff41"/></svg>'), auto;
+}
+
+a, button, .clickable, .nav-link, .btn {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><defs><filter id="glow"><feGaussianBlur stdDeviation="1" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><circle cx="10" cy="10" r="8" fill="none" stroke="%2306b6d4" stroke-width="2" filter="url(%23glow)"/><path d="M7 10l2 2 4-4" stroke="%2300ff41" stroke-width="2" fill="none"/><circle cx="10" cy="10" r="2" fill="%23ffffff"/></svg>'), pointer;
+}
+
+code, pre, .console-input, .retro-console-container, input[type="text"], textarea {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><defs><filter id="glow"><feGaussianBlur stdDeviation="1" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect x="1" y="1" width="18" height="18" fill="%23000000" stroke="%2300ff41" stroke-width="1" rx="2"/><path d="M4 6l4 3-4 3" stroke="%2306b6d4" stroke-width="2" fill="none" filter="url(%23glow)"/><line x1="10" y1="12" x2="16" y2="12" stroke="%2300ff41" stroke-width="2"/></svg>'), text;
+}
+
+/* Custom Scrollbar - Matrix/Geek Style */
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(45deg, #0f0f0f, #1a1a1a);
+    border-radius: 7px;
+    border: 1px solid #333;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, 
+        #1e293b 0%, 
+        #2563eb 25%, 
+        #06b6d4 50%, 
+        #8b5cf6 75%, 
+        #1e293b 100%);
+    border-radius: 7px;
+    border: 2px solid #0f0f0f;
+    box-shadow: 
+        inset 0 0 8px rgba(0, 255, 65, 0.2),
+        0 0 4px rgba(37, 99, 235, 0.3);
+    position: relative;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, 
+        #334155 0%, 
+        #3b82f6 25%, 
+        #0891b2 50%, 
+        #a855f7 75%, 
+        #334155 100%);
+    box-shadow: 
+        inset 0 0 12px rgba(0, 255, 65, 0.4),
+        0 0 8px rgba(6, 182, 212, 0.5),
+        0 0 16px rgba(37, 99, 235, 0.3);
+    transform: scale(1.05);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(135deg, 
+        #475569 0%, 
+        #2563eb 25%, 
+        #06b6d4 50%, 
+        #8b5cf6 75%, 
+        #475569 100%);
+    box-shadow: 
+        inset 0 0 15px rgba(0, 255, 65, 0.6),
+        0 0 12px rgba(6, 182, 212, 0.7),
+        0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+::-webkit-scrollbar-corner {
+    background: linear-gradient(45deg, #0f0f0f, #1a1a1a);
+}
+
+/* Firefox Scrollbar */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #2563eb #1a1a1a;
+}
+
+/* Additional geek touches */
+body {
+    scrollbar-color: #2563eb #0f0f0f;
+}
+
+/* Matrix-style scrollbar animation */
+@keyframes matrix-glow {
+    0%, 100% { box-shadow: inset 0 0 6px rgba(0, 255, 65, 0.3); }
+    50% { box-shadow: inset 0 0 12px rgba(0, 255, 65, 0.6), 0 0 15px rgba(6, 182, 212, 0.3); }
+}
+
+::-webkit-scrollbar-thumb:active {
+    animation: matrix-glow 1s ease-in-out;
+}
+
 .hero-section {
     background: linear-gradient(135deg, var(--codalea-dark) 0%, #2d3748 100%);
     min-height: 100vh;
@@ -1233,6 +1327,1269 @@
     z-index: -1;
 }
 
+/* Estilos para partÃ­culas de cÃ³digo flotantes mejoradas */
+.code-particle {
+    position: absolute;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 12px;
+    color: rgba(6, 182, 212, 0.6);
+    pointer-events: none;
+    font-weight: 500;
+    text-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+    animation: floatParticle 6s infinite linear;
+    z-index: 1;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Estilos especÃ­ficos para diferentes tipos de partÃ­culas */
+.code-particle.codalea {
+    color: rgba(37, 99, 235, 0.8) !important;
+    font-weight: bold !important;
+    text-shadow: 0 0 20px rgba(37, 99, 235, 0.6) !important;
+    font-size: 14px !important;
+}
+
+.code-particle.dotnet {
+    color: rgba(147, 51, 234, 0.7) !important;
+    text-shadow: 0 0 15px rgba(147, 51, 234, 0.5) !important;
+    font-weight: 600 !important;
+}
+
+.code-particle.symbols {
+    color: rgba(6, 182, 212, 0.7) !important;
+    text-shadow: 0 0 12px rgba(6, 182, 212, 0.5) !important;
+    font-size: 16px !important;
+}
+
+.code-particle.keywords {
+    color: rgba(245, 158, 11, 0.7) !important;
+    text-shadow: 0 0 12px rgba(245, 158, 11, 0.5) !important;
+    font-style: italic;
+}
+
+.code-particle.methods {
+    color: rgba(16, 185, 129, 0.7) !important;
+    text-shadow: 0 0 12px rgba(16, 185, 129, 0.5) !important;
+    font-family: 'Consolas', monospace !important;
+}
+
+.code-particle.patterns {
+    color: rgba(239, 68, 68, 0.7) !important;
+    text-shadow: 0 0 12px rgba(239, 68, 68, 0.5) !important;
+    font-weight: 600 !important;
+}
+
+.code-particle.frameworks {
+    color: rgba(99, 102, 241, 0.7) !important;
+    text-shadow: 0 0 12px rgba(99, 102, 241, 0.5) !important;
+    font-size: 11px !important;
+}
+
+.code-particle.tech {
+    color: rgba(168, 85, 247, 0.7) !important;
+    text-shadow: 0 0 12px rgba(168, 85, 247, 0.5) !important;
+    font-weight: 600 !important;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(100vh) rotate(0deg) scale(0.8);
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    15% {
+        transform: translateY(80vh) rotate(45deg) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(50vh) rotate(180deg) scale(1.1);
+        opacity: 0.8;
+    }
+    85% {
+        transform: translateY(20vh) rotate(270deg) scale(1);
+        opacity: 0.6;
+    }
+    95% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-10vh) rotate(360deg) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Efecto de brillo para cÃ³digo activo */
+.code-glow {
+    filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.6));
+    transition: filter 0.3s ease;
+}
+
+/* AnimaciÃ³n de escritura mejorada */
+@keyframes typeWriterEnhanced {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+.typing-line {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #06b6d4;
+    animation: typeWriterEnhanced 0.8s steps(30, end) forwards;
+}
+
+.typing-line.complete {
+    border-right: none;
+    animation: none;
+}
+
+/* Efecto de pulsaciÃ³n para el editor */
+.code-editor-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.code-editor-container:hover {
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(6, 182, 212, 0.1);
+}
+
+.code-editor-container svg {
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+    max-width: 100%;
+    height: auto;
+}
+
+.code-editor-container:hover svg {
+    transform: translateY(-5px);
+}
+
+.code-editor-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(6, 182, 212, 0.02) 0%, 
+        rgba(37, 99, 235, 0.02) 100%);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+/* Estilos para partÃ­culas de cÃ³digo flotantes mejoradas */
+.code-particle {
+    position: absolute;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 12px;
+    color: rgba(6, 182, 212, 0.6);
+    pointer-events: none;
+    font-weight: 500;
+    text-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+    animation: floatParticle 6s infinite linear;
+    z-index: 1;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Estilos especÃ­ficos para diferentes tipos de partÃ­culas */
+.code-particle.codalea {
+    color: rgba(37, 99, 235, 0.8) !important;
+    font-weight: bold !important;
+    text-shadow: 0 0 20px rgba(37, 99, 235, 0.6) !important;
+    font-size: 14px !important;
+}
+
+.code-particle.dotnet {
+    color: rgba(147, 51, 234, 0.7) !important;
+    text-shadow: 0 0 15px rgba(147, 51, 234, 0.5) !important;
+    font-weight: 600 !important;
+}
+
+.code-particle.symbols {
+    color: rgba(6, 182, 212, 0.7) !important;
+    text-shadow: 0 0 12px rgba(6, 182, 212, 0.5) !important;
+    font-size: 16px !important;
+}
+
+.code-particle.keywords {
+    color: rgba(245, 158, 11, 0.7) !important;
+    text-shadow: 0 0 12px rgba(245, 158, 11, 0.5) !important;
+    font-style: italic;
+}
+
+.code-particle.methods {
+    color: rgba(16, 185, 129, 0.7) !important;
+    text-shadow: 0 0 12px rgba(16, 185, 129, 0.5) !important;
+    font-family: 'Consolas', monospace !important;
+}
+
+.code-particle.patterns {
+    color: rgba(239, 68, 68, 0.7) !important;
+    text-shadow: 0 0 12px rgba(239, 68, 68, 0.5) !important;
+    font-weight: 600 !important;
+}
+
+.code-particle.frameworks {
+    color: rgba(99, 102, 241, 0.7) !important;
+    text-shadow: 0 0 12px rgba(99, 102, 241, 0.5) !important;
+    font-size: 11px !important;
+}
+
+.code-particle.tech {
+    color: rgba(168, 85, 247, 0.7) !important;
+    text-shadow: 0 0 12px rgba(168, 85, 247, 0.5) !important;
+    font-weight: 600 !important;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(100vh) rotate(0deg) scale(0.8);
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    15% {
+        transform: translateY(80vh) rotate(45deg) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(50vh) rotate(180deg) scale(1.1);
+        opacity: 0.8;
+    }
+    85% {
+        transform: translateY(20vh) rotate(270deg) scale(1);
+        opacity: 0.6;
+    }
+    95% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-10vh) rotate(360deg) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Efecto de brillo para cÃ³digo activo */
+.code-glow {
+    filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.6));
+    transition: filter 0.3s ease;
+}
+
+/* AnimaciÃ³n de escritura mejorada */
+@keyframes typeWriterEnhanced {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+.typing-line {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #06b6d4;
+    animation: typeWriterEnhanced 0.8s steps(30, end) forwards;
+}
+
+.typing-line.complete {
+    border-right: none;
+    animation: none;
+}
+
+/* Efecto de pulsaciÃ³n para el editor */
+.code-editor-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.code-editor-container:hover {
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(6, 182, 212, 0.1);
+}
+
+.code-editor-container svg {
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+    max-width: 100%;
+    height: auto;
+}
+
+.code-editor-container:hover svg {
+    transform: translateY(-5px);
+}
+
+.code-editor-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(6, 182, 212, 0.02) 0%, 
+        rgba(37, 99, 235, 0.02) 100%);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+/* Additional Geek/Matrix Effects - Subtle */
+
+/* Matrix rain effect for very subtle background (optional) */
+@keyframes matrix-rain {
+    0% { transform: translateY(-100vh); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Subtle code-like decoration */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(0, 255, 65, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(37, 99, 235, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Enhanced cursor feedback */
+.clickable:active, button:active, a:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+/* Geek hover effects for interactive elements */
+.nav-link:hover, .btn:hover {
+    text-shadow: 0 0 8px rgba(6, 182, 212, 0.5);
+    transition: text-shadow 0.3s ease;
+}
+
+/* Code-like selection styling */
+::selection {
+    background: rgba(0, 255, 65, 0.2);
+    color: #ffffff;
+    text-shadow: 0 0 4px rgba(0, 255, 65, 0.5);
+}
+
+::-moz-selection {
+    background: rgba(0, 255, 65, 0.2);
+    color: #ffffff;
+    text-shadow: 0 0 4px rgba(0, 255, 65, 0.5);
+}
+
+/* Subtle animation for elements entering viewport */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced focus states with geek styling */
+input:focus, textarea:focus, button:focus, a:focus {
+    outline: 2px solid #06b6d4;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+}
+
+/* Geek-style placeholder text */
+input::placeholder, textarea::placeholder {
+    color: rgba(6, 182, 212, 0.6);
+    font-family: 'Courier New', monospace;
+}
+
+/* Performance optimization for cursors */
+.cursor-optimized {
+    will-change: cursor;
+    transform: translateZ(0);
+}
+
+/* Apply optimized cursor class to common elements */
+a, button, .clickable, .nav-link, .btn,
+code, pre, .console-input, .retro-console-container,
+input[type="text"], textarea {
+    will-change: cursor;
+}
+
+/* ====================================
+   REMOVE FOOTER WHITESPACE
+   ==================================== */
+
+/* Remove any default margins and ensure footer sticks to bottom */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ensure footer sticks to bottom with no whitespace */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    padding-bottom: 0;
+}
+
+/* Enhanced Footer Bottom with no whitespace */
+.footer-bottom {
+    background: linear-gradient(135deg, #0a0f1c 0%, #1e293b 100%);
+    padding: 2rem 0 1rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-tech-badge {
+    background: linear-gradient(135deg, #0a0f1c 0%, #1e293b 100%);
+    padding: 1rem 0;
+    margin: 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Ensure no extra space after footer */
+.modern-footer {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Remove any default Bootstrap margins */
+.container-fluid, .container {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* ====================================
+   SOCIAL LINKS ENHANCEMENTS
+   ==================================== */
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.3) 0%, rgba(6, 182, 212, 0.3) 100%);
+    transition: left 0.3s ease;
+}
+
+.social-link:hover::before {
+    left: 0;
+}
+
+.social-link:hover {
+    color: white;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+    border-color: rgba(6, 182, 212, 0.5);
+}
+
+.social-link svg {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover svg {
+    transform: scale(1.1);
+}
+
+/* Contact Items in Footer */
+.contact-item-footer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-item-footer:hover {
+    transform: translateX(5px);
+}
+
+.contact-icon {
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.contact-item-footer a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.contact-item-footer a:hover {
+    color: #06b6d4;
+}
+
+/* Contact Section Styles */
+#contact {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #1a202c 100%);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#contact .section-title {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+#contact .lead {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Contact Cards */
+.contact-card {
+    perspective: 1000px;
+    height: 350px;
+    margin-bottom: 2rem;
+}
+
+.contact-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.contact-card:hover .contact-card-inner {
+    transform: rotateY(180deg);
+}
+
+.contact-card-front,
+.contact-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card-front {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-card-back {
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.9) 0%, 
+        rgba(6, 182, 212, 0.9) 100%);
+    transform: rotateY(180deg);
+    color: white;
+}
+
+.whatsapp-card .contact-card-back {
+    background: linear-gradient(135deg, 
+        rgba(37, 211, 102, 0.9) 0%, 
+        rgba(18, 140, 126, 0.9) 100%);
+}
+
+/* Contact Icons */
+.contact-icon-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+    color: white;
+    margin: 0 auto 1rem;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-icon {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+
+.contact-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.6);
+}
+
+.whatsapp-icon:hover {
+    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+}
+
+/* Email Animation Particles */
+.email-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.email-particle {
+    position: absolute;
+    opacity: 0;
+    animation: emailFloat 3s ease-in-out infinite;
+    animation-delay: var(--delay);
+}
+
+.email-particle:nth-child(1) {
+    top: -20px;
+    left: 10px;
+}
+
+.email-particle:nth-child(2) {
+    top: 10px;
+    right: -10px;
+}
+
+.email-particle:nth-child(3) {
+    bottom: -15px;
+    left: -15px;
+}
+
+.email-particle:nth-child(4) {
+    bottom: 5px;
+    right: 15px;
+}
+
+@keyframes emailFloat {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(0px) scale(0.8);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateY(-15px) scale(1);
+    }
+}
+
+/* WhatsApp Chat Bubbles */
+.whatsapp-bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+       width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.chat-bubble {
+    position: absolute;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bubbleFloat 4s ease-in-out infinite;
+    animation-delay: var(--delay);
+    opacity: 0;
+}
+
+.chat-bubble:nth-child(1) {
+    top: -25px;
+    left: 15px;
+}
+
+.chat-bubble:nth-child(2) {
+    top: 15px;
+    right: -20px;
+}
+
+.chat-bubble:nth-child(3) {
+    bottom: -20px;
+    left: -25px;
+}
+
+.chat-bubble:nth-child(4) {
+    bottom: 10px;
+    right: 20px;
+}
+
+.chat-bubble svg {
+    width: 16px;
+    height: 16px;
+    color: white;
+}
+
+@keyframes bubbleFloat {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(0px) scale(0.5);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(-20px) scale(1);
+    }
+}
+
+/* Contact Card Content */
+.contact-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.contact-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-cta {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Contact Card Back Content */
+.contact-details h4 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-email,
+.contact-phone {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.contact-features {
+    margin-bottom: 1.5rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.feature-emoji {
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-emoji svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Contact Action Buttons */
+.btn-contact-action {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    font-weight: 500;
+}
+
+.btn-contact-action:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Additional Contact Info */
+.additional-contact-info {
+    margin-top: 4rem;
+    padding: 3rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-item {
+    color: white;
+    padding: 2rem 1rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.info-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.info-icon {
+    margin-bottom: 1rem;
+    color: #06b6d4;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.info-icon svg {
+    width: 48px;
+    height: 48px;
+    color: #06b6d4;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover .info-icon svg {
+    color: #2563eb;
+    transform: scale(1.1);
+}
+
+.info-item h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.info-item p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Contact Code Background */
+.contact-code-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    pointer-events: none;
+    opacity: 0.3;
+    overflow: hidden;
+}
+
+.code-line {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #06b6d4;
+    animation: codeScroll var(--duration) linear infinite;
+    animation-delay: var(--delay);
+    white-space: nowrap;
+}
+
+.code-line:nth-child(1) {
+    top: 20px;
+    left: -100%;
+}
+
+.code-line:nth-child(2) {
+    top: 60px;
+    left: -100%;
+}
+
+.code-line:nth-child(3) {
+    top: 100px;
+    left: -100%;
+}
+
+.code-line:nth-child(4) {
+    top: 140px;
+    left: -100%;
+}
+
+@keyframes codeScroll {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+.code-comment {
+    color: #9ca3af;
+}
+
+.code-keyword {
+    color: #f59e0b;
+}
+
+.code-variable {
+    color: #06b6d4;
+}
+
+.code-string {
+    color: #10b981;
+}
+
+.code-function {
+    color: #8b5cf6;
+}
+
+.code-method {
+    color: #f97316;
+}
+
+/* Responsive Design for Contact */
+@media (max-width: 768px) {
+    .contact-card {
+        height: 320px;
+        margin-bottom: 2rem;
+    }
+    
+    .contact-card-front,
+    .contact-card-back {
+        padding: 1.5rem;
+    }
+    
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .additional-contact-info {
+        margin-top: 3rem;
+        padding: 2rem 1rem;
+    }
+    
+    .info-item {
+        padding: 1.5rem 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .info-icon {
+        font-size: 2rem;
+    }
+    
+    .info-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 576px) {
+    #contact {
+        padding: 60px 0;
+    }
+    
+    #contact .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .contact-card {
+        height: 300px;
+    }
+    
+    .contact-title {
+        font-size: 1.3rem;
+    }
+    
+    .contact-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* ====================================
+   LANGUAGE SWITCHER STYLES
+   ==================================== */
+
+.language-switcher {
+    position: relative;
+    z-index: 1000;
+}
+
+.language-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 8px 16px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+}
+
+.language-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(6, 182, 212, 0.5);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
+}
+
+.language-flag {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.language-toggle:hover .language-flag {
+    transform: scale(1.1);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: rgba(26, 26, 26, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.language-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.language-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transform: translateX(4px);
+}
+
+.language-option.active {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(6, 182, 212, 0.2));
+    color: white;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.language-option .language-flag {
+    flex-shrink: 0;
+}
+
+.language-name {
+    font-weight: 500;
+}
+
+.language-native {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive language switcher */
+@media (max-width: 768px) {
+    .language-switcher {
+        order: -1;
+        margin-right: auto;
+    }
+    
+    .language-toggle {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .language-flag {
+        width: 18px;
+        height: 18px;
+        font-size: 11px;
+    }
+    
+    .language-dropdown {
+        right: auto;
+        left: 0;
+        min-width: 140px;
+    }
+}
+
+/* Animation for language transition */
+.language-transition {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.language-transition.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Language loading state */
+.language-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.language-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(6, 182, 212, 0.3) 50%, 
+        transparent 100%);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
 /* ========================================
    SECTION BACKGROUND ANIMATIONS
    ======================================== */
@@ -2116,4 +3473,743 @@ body {
     .contact-description {
         font-size: 0.9rem;
     }
+}
+
+/* ====================================
+   REMOVE FOOTER WHITESPACE
+   ==================================== */
+
+/* Remove any default margins and ensure footer sticks to bottom */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ensure footer sticks to bottom with no whitespace */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    padding-bottom: 0;
+}
+
+/* Enhanced Footer Bottom with no whitespace */
+.footer-bottom {
+    background: linear-gradient(135deg, #0a0f1c 0%, #1e293b 100%);
+    padding: 2rem 0 1rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-tech-badge {
+    background: linear-gradient(135deg, #0a0f1c 0%, #1e293b 100%);
+    padding: 1rem 0;
+    margin: 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Ensure no extra space after footer */
+.modern-footer {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Remove any default Bootstrap margins */
+.container-fluid, .container {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* ====================================
+   SOCIAL LINKS ENHANCEMENTS
+   ==================================== */
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.3) 0%, rgba(6, 182, 212, 0.3) 100%);
+    transition: left 0.3s ease;
+}
+
+.social-link:hover::before {
+    left: 0;
+}
+
+.social-link:hover {
+    color: white;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+    border-color: rgba(6, 182, 212, 0.5);
+}
+
+.social-link svg {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover svg {
+    transform: scale(1.1);
+}
+
+/* Contact Items in Footer */
+.contact-item-footer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-item-footer:hover {
+    transform: translateX(5px);
+}
+
+.contact-icon {
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.contact-item-footer a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.contact-item-footer a:hover {
+    color: #06b6d4;
+}
+
+/* Contact Section Styles */
+#contact {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #1a202c 100%);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#contact .section-title {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+#contact .lead {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Contact Cards */
+.contact-card {
+    perspective: 1000px;
+    height: 350px;
+    margin-bottom: 2rem;
+}
+
+.contact-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.contact-card:hover .contact-card-inner {
+    transform: rotateY(180deg);
+}
+
+.contact-card-front,
+.contact-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card-front {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-card-back {
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.9) 0%, 
+        rgba(6, 182, 212, 0.9) 100%);
+    transform: rotateY(180deg);
+    color: white;
+}
+
+.whatsapp-card .contact-card-back {
+    background: linear-gradient(135deg, 
+        rgba(37, 211, 102, 0.9) 0%, 
+        rgba(18, 140, 126, 0.9) 100%);
+}
+
+/* Contact Icons */
+.contact-icon-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+    color: white;
+    margin: 0 auto 1rem;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-icon {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+
+.contact-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.6);
+}
+
+.whatsapp-icon:hover {
+    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+}
+
+/* Email Animation Particles */
+.email-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.email-particle {
+    position: absolute;
+    opacity: 0;
+    animation: emailFloat 3s ease-in-out infinite;
+    animation-delay: var(--delay);
+}
+
+.email-particle:nth-child(1) {
+    top: -20px;
+    left: 10px;
+}
+
+.email-particle:nth-child(2) {
+    top: 10px;
+    right: -10px;
+}
+
+.email-particle:nth-child(3) {
+    bottom: -15px;
+    left: -15px;
+}
+
+.email-particle:nth-child(4) {
+    bottom: 5px;
+    right: 15px;
+}
+
+@keyframes emailFloat {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(0px) scale(0.8);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateY(-15px) scale(1);
+    }
+}
+
+/* WhatsApp Chat Bubbles */
+.whatsapp-bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.chat-bubble {
+    position: absolute;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bubbleFloat 4s ease-in-out infinite;
+    animation-delay: var(--delay);
+    opacity: 0;
+}
+
+.chat-bubble:nth-child(1) {
+    top: -25px;
+    left: 15px;
+}
+
+.chat-bubble:nth-child(2) {
+    top: 15px;
+    right: -20px;
+}
+
+.chat-bubble:nth-child(3) {
+    bottom: -20px;
+    left: -25px;
+}
+
+.chat-bubble:nth-child(4) {
+    bottom: 10px;
+    right: 20px;
+}
+
+.chat-bubble svg {
+    width: 16px;
+    height: 16px;
+    color: white;
+}
+
+@keyframes bubbleFloat {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(0px) scale(0.5);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(-20px) scale(1);
+    }
+}
+
+/* Contact Card Content */
+.contact-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.contact-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-cta {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Contact Card Back Content */
+.contact-details h4 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-email,
+.contact-phone {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.contact-features {
+    margin-bottom: 1.5rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.feature-emoji {
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-emoji svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Contact Action Buttons */
+.btn-contact-action {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    font-weight: 500;
+}
+
+.btn-contact-action:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Additional Contact Info */
+.additional-contact-info {
+    margin-top: 4rem;
+    padding: 3rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-item {
+    color: white;
+    padding: 2rem 1rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.info-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.info-icon {
+    margin-bottom: 1rem;
+    color: #06b6d4;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.info-icon svg {
+    width: 48px;
+    height: 48px;
+    color: #06b6d4;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover .info-icon svg {
+    color: #2563eb;
+    transform: scale(1.1);
+}
+
+.info-item h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.info-item p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Contact Code Background */
+.contact-code-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    pointer-events: none;
+    opacity: 0.3;
+    overflow: hidden;
+}
+
+.code-line {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #06b6d4;
+    animation: codeScroll var(--duration) linear infinite;
+    animation-delay: var(--delay);
+    white-space: nowrap;
+}
+
+.code-line:nth-child(1) {
+    top: 20px;
+    left: -100%;
+}
+
+.code-line:nth-child(2) {
+    top: 60px;
+    left: -100%;
+}
+
+.code-line:nth-child(3) {
+    top: 100px;
+    left: -100%;
+}
+
+.code-line:nth-child(4) {
+    top: 140px;
+    left: -100%;
+}
+
+@keyframes codeScroll {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+.code-comment {
+    color: #9ca3af;
+}
+
+.code-keyword {
+    color: #f59e0b;
+}
+
+.code-variable {
+    color: #06b6d4;
+}
+
+.code-string {
+    color: #10b981;
+}
+
+.code-function {
+    color: #8b5cf6;
+}
+
+.code-method {
+    color: #f97316;
+}
+
+/* Responsive Design for Contact */
+@media (max-width: 768px) {
+    .contact-card {
+        height: 320px;
+        margin-bottom: 2rem;
+    }
+    
+    .contact-card-front,
+    .contact-card-back {
+        padding: 1.5rem;
+    }
+    
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .additional-contact-info {
+        margin-top: 3rem;
+        padding: 2rem 1rem;
+    }
+    
+    .info-item {
+        padding: 1.5rem 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .info-icon {
+        font-size: 2rem;
+    }
+    
+    .info-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 576px) {
+    #contact {
+        padding: 60px 0;
+    }
+    
+    #contact .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .contact-card {
+        height: 300px;
+    }
+    
+    .contact-title {
+        font-size: 1.3rem;
+    }
+    
+    .contact-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* Additional Geek/Matrix Effects - Subtle */
+
+/* Matrix rain effect for very subtle background (optional) */
+@keyframes matrix-rain {
+    0% { transform: translateY(-100vh); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Subtle code-like decoration */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(0, 255, 65, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(37, 99, 235, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Enhanced cursor feedback */
+.clickable:active, button:active, a:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+/* Geek hover effects for interactive elements */
+.nav-link:hover, .btn:hover {
+    text-shadow: 0 0 8px rgba(6, 182, 212, 0.5);
+    transition: text-shadow 0.3s ease;
+}
+
+/* Code-like selection styling */
+::selection {
+    background: rgba(0, 255, 65, 0.2);
+    color: #ffffff;
+    text-shadow: 0 0 4px rgba(0, 255, 65, 0.5);
+}
+
+::-moz-selection {
+    background: rgba(0, 255, 65, 0.2);
+    color: #ffffff;
+    text-shadow: 0 0 4px rgba(0, 255, 65, 0.5);
+}
+
+/* Subtle animation for elements entering viewport */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced focus states with geek styling */
+input:focus, textarea:focus, button:focus, a:focus {
+    outline: 2px solid #06b6d4;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+}
+
+/* Geek-style placeholder text */
+input::placeholder, textarea::placeholder {
+    color: rgba(6, 182, 212, 0.6);
+    font-family: 'Courier New', monospace;
+}
+
+/* Performance optimization for cursors */
+.cursor-optimized {
+    will-change: cursor;
+    transform: translateZ(0);
+}
+
+/* Apply optimized cursor class to common elements */
+a, button, .clickable, .nav-link, .btn,
+code, pre, .console-input, .retro-console-container,
+input[type="text"], textarea {
+    will-change: cursor;
 }
